@@ -78,6 +78,19 @@ export const constantRoutes = [
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
       }
     ]
+  },
+  {
+    path: '/datasource',
+    component: Layout,
+    redirect: '/datasource/list',
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/datasource/list'),
+        name: 'Dashboard',
+        meta: { title: '数据源列表', icon: 'component', affix: true }
+      }
+    ]
   }
 ]
 
