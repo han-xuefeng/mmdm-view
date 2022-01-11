@@ -25,8 +25,8 @@ export function logout() {
 
 export function changePwd(data) {
   return request({
-    url:'/admin/change_pwd',
-    method:'post',
+    url: '/admin/change_pwd',
+    method: 'post',
     data
   })
 }

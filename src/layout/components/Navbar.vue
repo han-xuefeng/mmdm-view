@@ -23,7 +23,7 @@
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item @click.native="changePwd">
+          <el-dropdown-item @click.native="changePwd">
             <span style="display:block;">修改密码</span>
           </el-dropdown-item>
           <el-dropdown-item :divided="true" @click.native="logout">
@@ -62,8 +62,8 @@ import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
-import Search from '@/components/HeaderSearch'
-import {changePwd} from '@/api/user'
+
+import { changePwd } from '@/api/user'
 
 export default {
   components: {
@@ -71,19 +71,18 @@ export default {
     Hamburger,
     ErrorLog,
     Screenfull,
-    SizeSelect,
-    Search
+    SizeSelect
   },
-  data(){
+  data() {
     return {
       dialogFormVisible: false,
       temp: {
-        username:this.$store.getters.name,
-        password:undefined
+        username: this.$store.getters.name,
+        password: undefined
       },
       rules: {
         password: [{ required: true, message: 'password is required', trigger: 'blur' }]
-      },
+      }
     }
   },
   computed: {
