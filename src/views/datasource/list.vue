@@ -29,6 +29,26 @@
           <span>{{ row.name }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="Host" min-width="150px">
+        <template slot-scope="{row}">
+          <span>{{ row.host }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="用户名" min-width="150px">
+        <template slot-scope="{row}">
+          <span>{{ row.userName }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="端口" min-width="150px">
+        <template slot-scope="{row}">
+          <span>{{ row.port }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="密码" min-width="150px">
+        <template slot-scope="{row}">
+          <span>{{ row.password }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="操作" align="center" width="230" class-name="small-padding fixed-width">
         <template slot-scope="{row,$index}">
           <el-button type="primary" size="mini">
