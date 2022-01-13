@@ -89,6 +89,28 @@ export const constantRoutes = [
         component: () => import('@/views/datasource/list'),
         name: 'Dashboard',
         meta: { title: '数据源列表', icon: 'component', affix: true }
+      },
+      {
+        path: 'add',
+        component: () => import('@/views/datasource/add'),
+        name: '添加数据源',
+        meta: {
+          title: '添加数据源',
+          icon: 'component',
+          affix: false
+        },
+        hidden: true
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/datasource/add'),
+        name: '修改数据源',
+        meta: {
+          title: '修改数据源',
+          icon: 'component',
+          affix: false
+        },
+        hidden: true
       }
     ]
   },
