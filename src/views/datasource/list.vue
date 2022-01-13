@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { datasourceList } from '@/api/datasource'
+import { datasourceList, datasourceDelete } from '@/api/datasource'
 import waves from '@/directive/waves' // waves directive
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
@@ -112,12 +112,32 @@ export default {
       this.getList()
     },
     handleDelete(row, index) {
-      this.$notify({
-        title: 'Success',
-        message: 'Delete Successfully',
-        type: 'success',
-        duration: 2000
+      this.$confirm('此操作将删除该记录, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        const deleteQuery = {
+          'id': row.id
+        }
+        datasourceDelete(deleteQuery).then(response => {
+          this.$notify({
+            title: 'Success',
+            message: '删除成功',
+            type: 'success',
+            duration: 2000
+          })
+          this.getList()
+        })
+      }).catch(() => {
+        this.$notify({
+          title: 'Success',
+          message: '已取消删除',
+          type: 'info',
+          duration: 2000
+        })
       })
+
       // this.list.splice(index, 1)
     }
   }

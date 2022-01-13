@@ -7,3 +7,11 @@ export function datasourceList(query) {
     params: query
   })
 }
+
+export function datasourceDelete(query) {
+  return request({
+    url: '/datasource/delete',
+    method: 'get',
+    params: query
+  })
+}
