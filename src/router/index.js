@@ -91,6 +91,19 @@ export const constantRoutes = [
         meta: { title: '数据源列表', icon: 'component', affix: true }
       }
     ]
+  },
+  {
+    path: '/datagroup',
+    component: Layout,
+    redirect: '/datagroup/list',
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/datagroup/list'),
+        name: 'Dashboard',
+        meta: { title: '数据组列表', icon: 'nested', affix: true }
+      }
+    ]
   }
 ]
 
