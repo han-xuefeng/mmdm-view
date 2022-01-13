@@ -28,7 +28,7 @@ export function datasourceDetail(query) {
   return request({
     url: '/datasource/detail',
     method: 'get',
-    params:query
+    params: query
   })
 }
 
@@ -39,3 +39,11 @@ export function datasourceUpdate(data) {
     data
   })
 }
+
+export function datasourceListAll() {
+  return request({
+    url: '/datasource/listAll',
+    method: 'get',
+    data
+  })
+} 

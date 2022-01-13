@@ -124,6 +124,28 @@ export const constantRoutes = [
         component: () => import('@/views/datagroup/list'),
         name: 'Dashboard',
         meta: { title: '数据组列表', icon: 'nested', affix: true }
+      },
+      {
+        path: 'add',
+        component: () => import('@/views/datagroup/add'),
+        name: '添加数据组',
+        meta: {
+          title: '添加数据组',
+          icon: 'component',
+          affix: false
+        },
+        hidden: true
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/datagroup/add'),
+        name: '修改数据组',
+        meta: {
+          title: '修改数据组',
+          icon: 'component',
+          affix: false
+        },
+        hidden: true
       }
     ]
   }
