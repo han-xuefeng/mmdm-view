@@ -43,7 +43,6 @@ export function datasourceUpdate(data) {
 export function datasourceListAll() {
   return request({
     url: '/datasource/listAll',
-    method: 'get',
-    data
+    method: 'get'
   })
-} 
+}

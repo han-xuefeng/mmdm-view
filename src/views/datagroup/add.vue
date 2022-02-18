@@ -15,9 +15,8 @@
               <el-input v-model="form.prefix" placeholder="prefix" />
             </el-form-item>
             <el-form-item label="数据源" class="is-required">
-              <el-select v-model="source_id" placeholder="请选择">
-                <el-option v-for="item in datagroupList" :key="item.name" :label="item.name" :value="item.id">
-                </el-option>
+              <el-select v-model="form.source_id" placeholder="请选择">
+                <el-option v-for="item in datasourceList" :key="item.name" :label="item.name" :value="item.id" />
               </el-select>
             </el-form-item>
             <el-form-item label="密码">
@@ -50,7 +49,8 @@ export default {
         user_name: '',
         host: '',
         port: '',
-        password: ''
+        password: '',
+        source_id: ''
       },
       datasourceList: []
     }
@@ -78,7 +78,7 @@ export default {
     },
     fetchDatasourceList() {
       datasourceListAll().then(response => {
-        this.datagroupList = response.data.list
+        this.datasourceList = response.data.list
       }).catch(() => {
       })
     },
